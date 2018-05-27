@@ -6,6 +6,7 @@
 // ABBC BBCode processor.
 include('abbc/abbc.lib.php');
 
+
 // current version (int)
 $shiiversion = 3960;
 

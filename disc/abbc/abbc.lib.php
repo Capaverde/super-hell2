@@ -8,7 +8,9 @@
 // You should not need to change anything in here,
 // use abbc.cfg.php for configuration
 
-if (!defined('ABBC_LIB')) { define('ABBC_LIB', 1);
+//if (!defined('ABBC_LIB')) { 
+
+define('ABBC_LIB', 1);
 
 define("ABBC_ALL", -1);
 define("ABBC_NONE", 0);
@@ -44,7 +46,7 @@ function abbc_init()
 
 	// prepare tag configuration
 	$abbc_max_taglen = 0;
-	foreach ($abbc_tags as $key => $value)
+	foreach ($abbc_tags as $key => $myvalue)
 	{
 		$abbc_tags[$key]['level'] = 0;
 		$abbc_tags[$key]['start'] = array();
@@ -1055,7 +1057,7 @@ function abbc_valid_tagname(&$tagname)
 	if (array_key_exists($tagname, $abbc_tags)) return true;
 
 	reset($abbc_tags);
-	while (list ($key, $value) = each ($abbc_tags))
+	while (list ($key, $myvalue) = each ($abbc_tags))
 	{
 		#echo "case-checking for tagname '$tagname' against '$key'<br>";
 		if ($abbc_tags[$key]['nocase'] && !strcasecmp($key, $tagname))
@@ -1110,13 +1112,13 @@ function abbc_css()
 	$css = <<<EOF
 .quote
 {
-	border-left: $abbc_cfg[quote_borderl];
-	padding: $abbc_cfg[quote_padding];
-	margin: $abbc_cfg[quote_margin];
+	border-left: $abbc_cfg['quote_borderl'];
+	padding: $abbc_cfg['quote_padding'];
+	margin: $abbc_cfg['quote_margin'];
 }
 .quote .quote
 {
-	border-left: $abbc_cfg[quote_borderl2];
+	border-left: $abbc_cfg['quote_borderl2'];
 }
 .quote .quote .quote
 {
@@ -1155,7 +1157,6 @@ EOF;
 	return $css;
 }   // function abbc_css()
 
-
 //  convert user data into another format
 //  e.g. smileys into bb-tags
 //  or the other way round (for editing a (converted) stored posting with friendly smiley presentation)
@@ -1193,6 +1194,6 @@ function abbc_convert($in, $action)
 }
 
 
-} // ABBC_LIB
+//} // ABBC_LIB
 
 ?>

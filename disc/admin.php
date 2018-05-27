@@ -554,11 +554,11 @@ $top = file_get_contents("skin/$setting[skin]/forumstop.txt");
        $top = str_replace("<%FORUMURL%>", $setting[urltoforum], $top);
 fputs($index, $top);
 if (!$board) fputs($index, "<dt>No boards :(</dt>");
-else foreach ($board as $this) {
-$local = @file("$this/localsettings.txt");
+else foreach ($board as $thus) {
+$local = @file("$thus/localsettings.txt");
 if ($local) { foreach ($local as $tmp){  $tmp = trim($tmp);   list ($name, $value) = explode("=", $tmp);  $setting[$name] = $value;  } }
-fputs($index, "<dt><a href='$this'>$setting[boardname]</a><dd>");
-fputs($index, file_get_contents("$this/head.txt"));
+fputs($index, "<dt><a href='$thus'>$setting[boardname]</a><dd>");
+fputs($index, file_get_contents("$thus/head.txt"));
 }
 $bottom = file_get_contents("skin/$setting[skin]/forumsbottom.txt");
 $bottom = str_replace("<%SHIIVERSION%>", $shiiversion, $bottom);
