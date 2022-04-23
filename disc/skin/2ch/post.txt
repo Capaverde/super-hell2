@@ -1,1 +1,0 @@
-<dt><%NUMBER%> <%ID%> <%DATE%> <small><%NAME%><%TRIP%></small><dd><%MESSAGE%>

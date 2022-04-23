@@ -1,3 +1,0 @@
-<%STARTFORM%>
-<table class="fpthread"><tr><td>
-<h3><%THREADNAME%></h3>

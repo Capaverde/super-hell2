@@ -1,3 +1,0 @@
-</table>
-<table
-class="fpthread"><tr><td><table><tr><td><%HEADTXT%></td></tr></table></td></tr></table>
